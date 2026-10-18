@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071a22">
+<title>票据夹 · 本地可搜索的发票、合同与截图资料库</title>
+<meta name="description" content="拖入发票、合同、截图或 PDF，浏览器本地 OCR，规则提取金额日期号码，人工校对后入库。数据不上传，完全免费。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23071a22'/%3E%3Cpath d='M9 8h11l4 4v12H9z' fill='none' stroke='%23f0efe9' stroke-width='1.8'/%3E%3Cpath d='M13 17h7M13 21h5' stroke='%2339718b' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side" id="side">
+    <div class="brand"><span class="mark"><svg viewBox="0 0 32 32"><path d="M9 6h10l5 5v15H9z"/><path d="M13 16h7M13 20h5"/></svg></span><div><b>票据夹</b><i>PIAOJU · 本地资料库</i></div></div>
+    <nav class="nav" id="nav">
+      <button data-view="inbox" class="on"><span class="ix">01</span>导入与校对<em id="nPending" hidden>0</em></button>
+      <button data-view="lib"><span class="ix">02</span>资料库<em id="nSaved">0</em></button>
+      <button data-view="stats"><span class="ix">03</span>按月统计</button>
+      <button data-view="backup"><span class="ix">04</span>备份与说明</button>
+    </nav>
+    <div class="side-foot">
+      <div class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>文件与识别结果只存在本浏览器，<b>不上传</b>。</span></div>
+      <div class="store" id="storeInfo">存储：计算中…</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="hero">
+      <div class="hero-in">
+        <div class="eyebrow" id="heroEy">辅助录入 · 不是财务凭证</div>
+        <h1 id="heroH">把<span>发票、合同、截图</span><br>变成能搜、能算、能备份的本地资料库</h1>
+        <p class="lead">拖入图片或 PDF，浏览器里完成中英文识别；金额、日期、号码、买卖方由公开规则提取，附置信度与原文高亮，<b>你校对确认后才入库</b>。</p>
+        <div class="hero-act">
+          <button class="pill primary" id="heroPick">导入票据</button>
+          <button class="pill glass" data-go="lib">打开资料库</button>
+        </div>
+      </div>
+      <div class="stats" id="heroStats">
+        <div><i>已入库</i><b id="sCount">0</b></div>
+        <div><i>本月金额（元）</i><b id="sMonth">0.00</b></div>
+        <div><i>待校对</i><b id="sPend">0</b></div>
+        <div><i>资料总金额（元）</i><b id="sAll">0.00</b></div>
+      </div>
+    </header>
+
+    <section class="view on" id="v-inbox">
+      <div class="gutter">
+        <label class="drop" id="drop" tabindex="0">
+          <input type="file" id="fileIn" accept="image/*,application/pdf,.pdf" multiple hidden>
+          <span class="dz-ico"><svg viewBox="0 0 32 32"><path d="M16 22V7M10 13l6-6 6 6"/><path d="M6 20v5h20v-5"/></svg></span>
+          <b>拖入 / 点击选择 / 粘贴 图片或 PDF</b>
+          <span>支持 JPG、PNG、WebP、PDF（有文字层的 PDF 直接取文字，扫描件走 OCR）。可多选，手机可直接拍照。</span>
+        </label>
+        <div class="engine" id="engine">
+          <div><b>识别引擎</b><span id="engState">未加载。首次识别时从本站加载约 9 MB（中文+英文语言包），之后浏览器会缓存。</span></div>
+          <div class="bar"><i id="engBar"></i></div>
+        </div>
+        <div class="sec-h"><span class="eyebrow dark">队列</span><h2>待校对</h2></div>
+        <div id="queue" class="rows"><p class="empty">还没有导入任何文件。</p></div>
+      </div>
+    </section>
+
+    <section class="view" id="v-lib">
+      <div class="gutter">
+        <div class="tools">
+          <div class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><input id="q" type="search" placeholder="全文搜索：公司名、金额、号码、文中任意词…" autocomplete="off"></div>
+          <select id="fCat"><option value="">全部类别</option></select>
+          <select id="fTag"><option value="">全部标签</option></select>
+          <select id="fMonth"><option value="">全部月份</option></select>
+          <select id="fSort"><option value="date">按日期（新→旧）</option><option value="added">按入库时间</option><option value="amount">按金额（高→低）</option></select>
+        </div>
+        <div class="count" id="libCount"></div>
+        <div id="libList" class="lib"></div>
+      </div>
+    </section>
+
+    <section class="view" id="v-stats">
+      <div class="gutter">
+        <div class="sec-h"><span class="eyebrow dark">按文档日期</span><h2>按月统计</h2></div>
+        <p class="note">仅统计已入库资料；金额按人民币元直接相加，不做汇率换算；没有日期的资料归入“未填日期”。</p>
+        <div id="statTable" class="stat-table"></div>
+        <div class="two">
+          <div><div class="sec-h"><span class="eyebrow dark">类别</span><h3>类别分布</h3></div><div id="statCat" class="stat-table small"></div></div>
+          <div><div class="sec-h"><span class="eyebrow dark">卖方</span><h3>金额最高的对方</h3></div><div id="statSeller" class="stat-table small"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="v-backup">
+      <div class="gutter">
+        <div class="sec-h"><span class="eyebrow dark">数据只在本机</span><h2>备份与导入</h2></div>
+        <div class="warnbox"><b>请定期备份。</b>浏览器“清除站点数据”、隐私模式、换设备、系统清理空间（尤其 iOS Safari 长期不访问）都可能让本地数据丢失。</div>
+        <div class="cards">
+          <div class="card dark"><h3>JSON 完整备份</h3><p>包含全部字段、识别文本、标签。勾选后附带原件与预览图（体积较大）。</p>
+            <label class="chk"><input type="checkbox" id="bkFiles" checked> 包含原件文件</label>
+            <div class="row-act"><button class="pill primary" id="bkExport">导出 JSON 备份</button><button class="pill glass" id="bkImport">导入 JSON 备份</button></div>
+            <input type="file" id="bkFile" accept=".json,application/json" hidden></div>
+          <div class="card"><h3>CSV 与原件包</h3><p>CSV 用 UTF-8 带 BOM，Excel 可直接打开。可只导出某个月份，ZIP 内含 CSV 与对应原件，适合月底报销。</p>
+            <div class="row-act"><select id="exMonth"><option value="">全部月份</option></select></div>
+            <div class="row-act"><button class="pill ink" id="exCsv">导出 CSV</button><button class="pill ink" id="exZip">导出原件 ZIP</button></div></div>
+          <div class="card"><h3>存储与清理</h3><p id="storeDetail">—</p>
+            <div class="row-act"><button class="pill ink" id="persist">申请“持久存储”</button><button class="pill danger" id="wipe">清空全部数据…</button></div></div>
+        </div>
+        <div class="sec-h"><span class="eyebrow dark">如实说明</span><h2>规则与已知限制</h2></div>
+        <div class="limits" id="limits"></div>
+      </div>
+    </section>
+    <footer class="foot">票据夹 · 纯前端，无账号、无广告、无付费 · 识别：tesseract.js　PDF：pdf.js　搜索：MiniSearch</footer>
+  </main>
+</div>
+
+<nav class="tabbar" id="tabbar">
+  <button data-view="inbox" class="on">导入<em id="nPending2" hidden>0</em></button><button data-view="lib">资料库</button><button data-view="stats">统计</button><button data-view="backup">备份</button>
+</nav>
+
+<div class="modal" id="review" hidden>
+  <div class="m-top"><div><span class="eyebrow">校对</span><b id="rvTitle">—</b></div><button class="x" id="rvClose" aria-label="关闭">✕</button></div>
+  <div class="m-body">
+    <div class="m-img">
+      <div class="img-tools"><button class="pill sm glass" id="zOut">−</button><span id="zVal">100%</span><button class="pill sm glass" id="zIn">＋</button><button class="pill sm glass" id="zDl">下载原件</button><span class="hint" id="imgNote"></span></div>
+      <div class="img-scroll" id="imgScroll"><div class="imgwrap" id="imgWrap"><img id="rvImg" alt="原件预览"><div id="hl"></div></div></div>
+    </div>
+    <div class="m-form">
+      <div class="ocrinfo" id="ocrInfo"></div>
+      <div id="rvWarn"></div>
+      <div id="fieldList"></div>
+      <div class="meta">
+        <label>类别<select id="rvCat"></select></label>
+        <label>标签（回车添加）<div class="tags" id="rvTags"><input id="rvTagIn" placeholder="如：报销、2026Q4、客户A" list="tagSug"><datalist id="tagSug"></datalist></div></label>
+        <label>备注<input id="rvNote" placeholder="可选"></label>
+      </div>
+      <details class="txt" id="txtBox"><summary>识别原文（高亮 = 提取依据）<button class="link" id="txtEdit" type="button">编辑原文并重新提取</button></summary>
+        <div class="txtview" id="txtView"></div><textarea id="txtArea" hidden></textarea><div class="row-act" id="txtAct" hidden><button class="pill sm ink" id="txtApply">应用并重新提取</button><span class="hint">重新提取会覆盖上方字段的当前值。</span></div></details>
+      <div class="confirm">
+        <label class="chk"><input type="checkbox" id="rvOk"> 我已对照左侧原件逐项核对了上述字段</label>
+        <div class="row-act"><button class="pill primary" id="rvSave" disabled>确认入库</button><button class="pill ghost" id="rvDel">丢弃</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script src="zip.js"></script>
+<script src="extract.js"></script>
+<script src="vendor/minisearch.js"></script>
+<script src="vendor/pdf.min.js"></script>
+<script src="vendor/tess/tesseract.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

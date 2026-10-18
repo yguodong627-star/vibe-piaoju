@@ -1,0 +1,572 @@
+{
+ "res": [
+  {
+   "name": "contract1",
+   "ms": 1740,
+   "mode": "ocr",
+   "conf": 90,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "128000.00",
+     "exp": "128000.00",
+     "ok": true,
+     "conf": 0.72
+    },
+    "date": {
+     "got": "2026-03-18",
+     "exp": "2026-03-18",
+     "ok": true,
+     "conf": 0.82
+    },
+    "invoiceNo": {
+     "got": "HT-2026-0318",
+     "exp": "HT-2026-0318",
+     "ok": true,
+     "conf": 0.8
+    },
+    "buyer": {
+     "got": "深圳星河网络科技有限公司",
+     "exp": "深圳星河网络科技有限公司",
+     "ok": true,
+     "conf": 0.55
+    },
+    "seller": {
+     "got": "成都青禾软件服务有限公司",
+     "exp": "成都青禾软件服务有限公司",
+     "ok": true,
+     "conf": 0.54
+    },
+    "docType": {
+     "got": "合同",
+     "exp": "合同",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv1_clean",
+   "ms": 2253,
+   "mode": "ocr",
+   "conf": 59,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "5625.14",
+     "exp": "5625.14",
+     "ok": true,
+     "conf": 0.82
+    },
+    "date": {
+     "got": "2024-10-15",
+     "exp": "2024-10-15",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "24312000000012345678",
+     "exp": "24312000000012345678",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "北京云杉科技有限公司",
+     "exp": "北京云杉科技有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "上海衡远贸易有限公司",
+     "exp": "上海衡远贸易有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv1_textlayer",
+   "ms": 276,
+   "mode": "textlayer",
+   "conf": 100,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "5625.14",
+     "exp": "5625.14",
+     "ok": true,
+     "conf": 0.38
+    },
+    "date": {
+     "got": "2024-10-15",
+     "exp": "2024-10-15",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "24312000000012345678",
+     "exp": "24312000000012345678",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "北京云杉科技有限公司",
+     "exp": "北京云杉科技有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "上海衡远贸易有限公司",
+     "exp": "上海衡远贸易有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv2_stack",
+   "ms": 867,
+   "mode": "ocr",
+   "conf": 75,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "2260.00",
+     "exp": "2260.00",
+     "ok": true,
+     "conf": 0.31
+    },
+    "date": {
+     "got": "2025-03-28",
+     "exp": "2025-03-28",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "08765432",
+     "exp": "08765432",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "杭州澄明设计工作室",
+     "exp": "杭州澄明设计工作室",
+     "ok": true,
+     "conf": 0.81
+    },
+    "seller": {
+     "got": "苏州宏图办公用品有限公司",
+     "exp": "苏州宏图办公用品有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv3_base",
+   "ms": 2212,
+   "mode": "ocr",
+   "conf": 58,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "4723.40",
+     "exp": "4723.40",
+     "ok": true,
+     "conf": 0.31
+    },
+    "date": {
+     "got": "2025-12-02",
+     "exp": "2025-12-02",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "25442000000098765432",
+     "exp": "25442000000098765432",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "广州拾光文化传媒有限公司",
+     "exp": "广州拾光文化传媒有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "杭州锐博印刷有限公司",
+     "exp": "杭州锐博印刷有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv3_lowres",
+   "ms": 1702,
+   "mode": "ocr",
+   "conf": 78,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "4723.40",
+     "exp": "4723.40",
+     "ok": true,
+     "conf": 0.35
+    },
+    "date": {
+     "got": "2025-12-02",
+     "exp": "2025-12-02",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "25442000000098765432",
+     "exp": "25442000000098765432",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "广州拾光文化传媒有限公司",
+     "exp": "广州拾光文化传媒有限公司",
+     "ok": true,
+     "conf": 0.84
+    },
+    "seller": {
+     "got": "杭州锐博印刷有限公司",
+     "exp": "杭州锐博印刷有限公司",
+     "ok": true,
+     "conf": 0.84
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv3_scanned",
+   "ms": 2474,
+   "mode": "ocr",
+   "conf": 59,
+   "notes": "该 PDF 含扫描页，已用 OCR。",
+   "r": {
+    "amount": {
+     "got": "4723.40",
+     "exp": "4723.40",
+     "ok": true,
+     "conf": 0.31
+    },
+    "date": {
+     "got": "2025-12-02",
+     "exp": "2025-12-02",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "25442000000098765432",
+     "exp": "25442000000098765432",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "广州拾光文化传媒有限公司",
+     "exp": "广州拾光文化传媒有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "杭州锐博印刷有限公司",
+     "exp": "杭州锐博印刷有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv3_skew12_shadow",
+   "ms": 3044,
+   "mode": "ocr",
+   "conf": 46,
+   "notes": "已自动纠偏 12.0°",
+   "r": {
+    "amount": {
+     "got": "",
+     "exp": "4723.40",
+     "ok": false,
+     "conf": 0
+    },
+    "date": {
+     "got": "",
+     "exp": "2025-12-02",
+     "ok": false,
+     "conf": 0
+    },
+    "invoiceNo": {
+     "got": "",
+     "exp": "25442000000098765432",
+     "ok": false,
+     "conf": 0
+    },
+    "buyer": {
+     "got": "广州拾光文化传媒有限公司",
+     "exp": "广州拾光文化传媒有限公司",
+     "ok": true,
+     "conf": 0.82
+    },
+    "seller": {
+     "got": "杭州锐博印刷有限公司",
+     "exp": "杭州锐博印刷有限公司",
+     "ok": true,
+     "conf": 0.82
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv3_skew6",
+   "ms": 2610,
+   "mode": "ocr",
+   "conf": 61,
+   "notes": "已自动纠偏 6.0°",
+   "r": {
+    "amount": {
+     "got": "4723.40",
+     "exp": "4723.40",
+     "ok": true,
+     "conf": 0.86
+    },
+    "date": {
+     "got": "2025-12-02",
+     "exp": "2025-12-02",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "25442000000098765432",
+     "exp": "25442000000098765432",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "广州拾光文化传媒有限公司",
+     "exp": "广州拾光文化传媒有限公司",
+     "ok": true,
+     "conf": 0.84
+    },
+    "seller": {
+     "got": "杭州锐博印刷有限公司",
+     "exp": "杭州锐博印刷有限公司",
+     "ok": true,
+     "conf": 0.84
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "inv3_stamp",
+   "ms": 2072,
+   "mode": "ocr",
+   "conf": 59,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "4723.40",
+     "exp": "4723.40",
+     "ok": true,
+     "conf": 0.32
+    },
+    "date": {
+     "got": "",
+     "exp": "2025-12-02",
+     "ok": false,
+     "conf": 0
+    },
+    "invoiceNo": {
+     "got": "25442000000098765432",
+     "exp": "25442000000098765432",
+     "ok": true,
+     "conf": 0.88
+    },
+    "buyer": {
+     "got": "广州拾光文化传媒有限公司",
+     "exp": "广州拾光文化传媒有限公司",
+     "ok": true,
+     "conf": 0.84
+    },
+    "seller": {
+     "got": "杭州锐博印刷有展公司",
+     "exp": "杭州锐博印刷有限公司",
+     "ok": false,
+     "conf": 0.84
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "receipt1",
+   "ms": 645,
+   "mode": "ocr",
+   "conf": 86,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "209.80",
+     "exp": "209.80",
+     "ok": true,
+     "conf": 0.45
+    },
+    "date": {
+     "got": "2026-08-05",
+     "exp": "2026-08-05",
+     "ok": true,
+     "conf": 0.82
+    },
+    "invoiceNo": {
+     "got": "",
+     "exp": "",
+     "ok": true,
+     "conf": 0
+    },
+    "buyer": {
+     "got": "",
+     "exp": "",
+     "ok": true,
+     "conf": 0
+    },
+    "seller": {
+     "got": "晨光文具超市",
+     "exp": "晨光文具超市",
+     "ok": true,
+     "conf": 0.5
+    },
+    "docType": {
+     "got": "收据",
+     "exp": "收据",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "wechat1",
+   "ms": 470,
+   "mode": "ocr",
+   "conf": 93,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "38.50",
+     "exp": "38.50",
+     "ok": true,
+     "conf": 0.66
+    },
+    "date": {
+     "got": "2026-09-21",
+     "exp": "2026-09-21",
+     "ok": true,
+     "conf": 0.82
+    },
+    "invoiceNo": {
+     "got": "4200002143202609217788990011",
+     "exp": "4200002143202609217788990011",
+     "ok": true,
+     "conf": 0.75
+    },
+    "buyer": {
+     "got": "",
+     "exp": "",
+     "ok": true,
+     "conf": 0
+    },
+    "seller": {
+     "got": "瑞安路兰州牛肉面馆",
+     "exp": "瑞安路兰州牛肉面馆",
+     "ok": true,
+     "conf": 0.78
+    },
+    "docType": {
+     "got": "截图",
+     "exp": "截图",
+     "ok": true,
+     "conf": null
+    }
+   }
+  }
+ ],
+ "tot": {
+  "amount": [
+   11,
+   12
+  ],
+  "date": [
+   10,
+   12
+  ],
+  "invoiceNo": [
+   10,
+   11
+  ],
+  "buyer": [
+   10,
+   10
+  ],
+  "seller": [
+   11,
+   12
+  ],
+  "docType": [
+   12,
+   12
+  ]
+ },
+ "okConf": "0.77",
+ "badConf": "0.84"
+}

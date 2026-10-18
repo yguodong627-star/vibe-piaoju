@@ -1,0 +1,347 @@
+{
+ "res": [
+  {
+   "name": "h_contract",
+   "ms": 1831,
+   "mode": "ocr",
+   "conf": 88,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "56800.00",
+     "exp": "56800.00",
+     "ok": true,
+     "conf": 0.78
+    },
+    "date": {
+     "got": "2025-09-12",
+     "exp": "2025-09-12",
+     "ok": true,
+     "conf": 0.82
+    },
+    "invoiceNo": {
+     "got": "SZ-2025-0912",
+     "exp": "SZ-2025-0912",
+     "ok": true,
+     "conf": 0.8
+    },
+    "buyer": {
+     "got": "长沙知行教育科技有限公司",
+     "exp": "长沙知行教育科技有限公司",
+     "ok": true,
+     "conf": 0.55
+    },
+    "seller": {
+     "got": "合肥折海广告传媒有限公司",
+     "exp": "合肥拓海广告传媒有限公司",
+     "ok": false,
+     "conf": 0.52
+    },
+    "docType": {
+     "got": "合同",
+     "exp": "合同",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "h_inv_a",
+   "ms": 273,
+   "mode": "textlayer",
+   "conf": 100,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "4700.80",
+     "exp": "4700.80",
+     "ok": true,
+     "conf": 0.38
+    },
+    "date": {
+     "got": "2026-02-09",
+     "exp": "2026-02-09",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "26510000001234567890",
+     "exp": "26510000001234567890",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "成都云岫文化创意有限公司",
+     "exp": "成都云岫文化创意有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "宁波远帆包装材料有限公司",
+     "exp": "宁波远帆包装材料有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "h_inv_a",
+   "ms": 2017,
+   "mode": "ocr",
+   "conf": 62,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "4700.80",
+     "exp": "4700.80",
+     "ok": true,
+     "conf": 0.77
+    },
+    "date": {
+     "got": "2026-02-09",
+     "exp": "2026-02-09",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "26510000001234567890",
+     "exp": "26510000001234567890",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "成都云册文化创意有限公司",
+     "exp": "成都云岫文化创意有限公司",
+     "ok": false,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "宁波远帆包装材料有限公司",
+     "exp": "宁波远帆包装材料有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "h_inv_b",
+   "ms": 1905,
+   "mode": "ocr",
+   "conf": 65,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "19928.00",
+     "exp": "19928.00",
+     "ok": true,
+     "conf": 0.82
+    },
+    "date": {
+     "got": "2026-07-23",
+     "exp": "2026-07-23",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "31220000007654321098",
+     "exp": "31220000007654321098",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "武汉澜桥信息技术有限公司",
+     "exp": "武汉澜桥信息技术有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "seller": {
+     "got": "西安秦风软件有限公司",
+     "exp": "西安秦风软件有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "h_receipt",
+   "ms": 490,
+   "mode": "ocr",
+   "conf": 92,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "483.00",
+     "exp": "483.00",
+     "ok": true,
+     "conf": 0.45
+    },
+    "date": {
+     "got": "2026-06-18",
+     "exp": "2026-06-18",
+     "ok": true,
+     "conf": 0.82
+    },
+    "invoiceNo": {
+     "got": "",
+     "exp": "",
+     "ok": true,
+     "conf": 0
+    },
+    "buyer": {
+     "got": "",
+     "exp": "",
+     "ok": true,
+     "conf": 0
+    },
+    "seller": {
+     "got": "东方办公用品商行",
+     "exp": "东方办公用品商行",
+     "ok": true,
+     "conf": 0.5
+    },
+    "docType": {
+     "got": "收据",
+     "exp": "收据",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "h_stack",
+   "ms": 1192,
+   "mode": "ocr",
+   "conf": 70,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "12850.50",
+     "exp": "12850.50",
+     "ok": true,
+     "conf": 0.28
+    },
+    "date": {
+     "got": "2026-05-17",
+     "exp": "2026-05-17",
+     "ok": true,
+     "conf": 0.95
+    },
+    "invoiceNo": {
+     "got": "19283746",
+     "exp": "19283746",
+     "ok": true,
+     "conf": 0.93
+    },
+    "buyer": {
+     "got": "南京听雨轩茶艺馆",
+     "exp": "南京听雨轩茶艺馆",
+     "ok": true,
+     "conf": 0.83
+    },
+    "seller": {
+     "got": "无锡新润食品贸易有限公司",
+     "exp": "无锡新润食品贸易有限公司",
+     "ok": true,
+     "conf": 0.85
+    },
+    "docType": {
+     "got": "发票",
+     "exp": "发票",
+     "ok": true,
+     "conf": null
+    }
+   }
+  },
+  {
+   "name": "h_wechat",
+   "ms": 504,
+   "mode": "ocr",
+   "conf": 92,
+   "notes": "",
+   "r": {
+    "amount": {
+     "got": "268.00",
+     "exp": "268.00",
+     "ok": true,
+     "conf": 0.66
+    },
+    "date": {
+     "got": "2026-10-03",
+     "exp": "2026-10-03",
+     "ok": true,
+     "conf": 0.82
+    },
+    "invoiceNo": {
+     "got": "4200001987202610031122334455",
+     "exp": "4200001987202610031122334455",
+     "ok": true,
+     "conf": 0.75
+    },
+    "buyer": {
+     "got": "",
+     "exp": "",
+     "ok": true,
+     "conf": 0
+    },
+    "seller": {
+     "got": "青岛海之味海鲜酒楼",
+     "exp": "青岛海之味海鲜酒楼",
+     "ok": true,
+     "conf": 0.78
+    },
+    "docType": {
+     "got": "截图",
+     "exp": "截图",
+     "ok": true,
+     "conf": null
+    }
+   }
+  }
+ ],
+ "tot": {
+  "amount": [
+   7,
+   7
+  ],
+  "date": [
+   7,
+   7
+  ],
+  "invoiceNo": [
+   6,
+   6
+  ],
+  "buyer": [
+   4,
+   5
+  ],
+  "seller": [
+   6,
+   7
+  ],
+  "docType": [
+   7,
+   7
+  ]
+ },
+ "okConf": "0.78",
+ "badConf": "0.69"
+}
